@@ -125,6 +125,7 @@ return {
                 command_palette = true,
                 long_message_to_split = true,
                 inc_rename = true,
+                lsp_doc_border =  true,
             },
         },
         -- stylua: ignore
@@ -229,4 +230,7 @@ return {
             },
         },
     },
+    {"nvim-tree/nvim-web-devicons"},
+    {"folke/lsp-colors.nvim"},
+    
 }
