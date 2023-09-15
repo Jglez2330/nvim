@@ -1,5 +1,9 @@
-return {
-    autotag = { enable = true },
+local M = {}
+
+function M.config(opts)
+    local default = {
+
+        autotag = { enable = true },
         context_commentstring = { enable = true, enable_autocmd = false },
         highlight = {
             enable = true,
@@ -65,5 +69,8 @@ return {
             },
         },
     }
+    opts = opts or {}
+    return default and vim.tbl_deep_extend("force", default, opts) or opts
+end
 
-}
+return M
