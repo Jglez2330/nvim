@@ -32,4 +32,6 @@ vim.api.nvim_set_hl(0,"TelescopeNormal",{bg="none"})
 require("telescope").load_extension('harpoon')
 require("telescope").load_extension("notify")
 require("telescope").load_extension("noice")
+require("telescope").load_extension("undo")
+
 -- require("telescope").load_extension("fzf")

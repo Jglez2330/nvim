@@ -1,4 +1,6 @@
 return {
 
-    {"Theprimeagen/harpoon"}
+    {"Theprimeagen/harpoon"},
+
+    {"Theprimeagen/vim-be-good"}
 }

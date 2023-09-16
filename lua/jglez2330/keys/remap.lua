@@ -22,3 +22,39 @@ autocmd("TextYankPost", {
   pattern = "*",
   callback = function() vim.highlight.on_yank() end,
 })
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "Move code block down"})
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {desc = "Move code block up"})
+
+vim.keymap.set("n", "J", "mzJ`z", {desc = " "})
+vim.keymap.set("n", "<C-d>", "<C-d>zz", {desc = "Move down"})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", {desc = "Move up"})
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]], {desc = "Delete and paste"})
+
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], {desc = "Yank to CB"})
+vim.keymap.set("n", "<leader>Y", [["+Y]], {desc = "Yank to CB Y"})
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = "Delete without yanking"})
+
+-- This is going to get me cancelled
+
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, {desc = "Format file"})
+
+
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+
+vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", {desc = "Undo"})
