@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex, {desc = "File tree"})
 
 vim.keymap.set("n", "<leader>w",  "<cmd>w<cr>", {desc = "Save" })
 
+vim.keymap.set("n", "<leader>c",  function () require "jglez2330.core".close() end, {desc = "Close" })
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", {desc = "tmux-sessionizer"})
 

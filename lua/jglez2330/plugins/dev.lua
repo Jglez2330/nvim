@@ -1,11 +1,17 @@
 return {
-{
-    'numToStr/Comment.nvim',
-    opts = {
-        -- add any options here
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
     },
-    lazy = false,
-},
-
+    {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 
 }
