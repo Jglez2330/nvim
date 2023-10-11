@@ -28,7 +28,7 @@ lsp.on_attach(function(client, bufnr)
         vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
     vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end,
         vim.tbl_extend("force", opts, { desc = "Code Action" }))
-    vim.keymap.set("n", "<leader>lrf", function() vim.lsp.buf.references() end,
+    vim.keymap.set("n", "<leader>lp", function() vim.lsp.buf.references() end,
         vim.tbl_extend("force", opts, { desc = "Symbol references" }))
     vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end,
         vim.tbl_extend("force", opts, { desc = "Symbol Rename" }))
