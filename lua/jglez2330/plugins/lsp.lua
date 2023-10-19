@@ -18,5 +18,7 @@ return {
             }
         end,
     },
-
+    {
+        "suoto/hdl_checker"
+    }
 }

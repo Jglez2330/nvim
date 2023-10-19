@@ -2,7 +2,7 @@ local M = {}
 
 function M.config(opts)
     local default = {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "lua" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "lua", },
 
         autotag = { enable = true },
         context_commentstring = { enable = true, enable_autocmd = false },
