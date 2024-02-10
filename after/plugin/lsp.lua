@@ -55,7 +55,8 @@ if not require'lspconfig.configs'.hdl_checker then
 end
 
 require'lspconfig'.hdl_checker.setup{}
-
+require'lspconfig'.jedi_language_server.setup{}
+require'lspconfig'.sourcekit.setup{cmd = {'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp'}}
 
 -- (Optional) Configure lua language server for neovim
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())

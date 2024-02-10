@@ -12,3 +12,4 @@ parser_config.vhdl = {
   },
   filetype = "vhdl", -- if filetype does not match the parser name
 }
+
