@@ -23,4 +23,8 @@ return {
     if path == nil then path = vim.fn.expand('%') end
     return string.format("<CMD>silent !open -R '%s'<CR>", path)
   end,
+
 }
+
+
+

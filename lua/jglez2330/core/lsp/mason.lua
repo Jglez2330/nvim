@@ -19,7 +19,7 @@ local config = {
   -- - "append" (Mason's bin location is put at the end of PATH)
   -- - "skip" (doesn't modify PATH)
   ---@type '"prepend"' | '"append"' | '"skip"'
-  PATH = "skip",
+  PATH = "prepend",
 
   log_level = vim.log.levels.INFO,
 
