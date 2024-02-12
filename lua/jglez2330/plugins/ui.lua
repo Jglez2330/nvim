@@ -8,7 +8,7 @@ return {
     {
         'stevearc/dressing.nvim',
         config = function()
-            require("lua.jglez2330.core.ui.dressing")
+            require("jglez2330.core.ui.dressing")
         end,
     },
     {
