@@ -16,5 +16,6 @@ return {
             wk.setup(opts)
             wk.register(opts.defaults)
         end, -- refer to the configuration section belo,
+        enabled = false,
     },
 }

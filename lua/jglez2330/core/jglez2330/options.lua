@@ -30,8 +30,8 @@ local options = {
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
 
-  timeoutlen = 225, -- time to wait for a mapped sequence to complete (in milliseconds)
-  updatetime = 250,
+  --timeoutlen = 225, -- time to wait for a mapped sequence to complete (in milliseconds)
+  --updatetime = 250,
 
   fileencoding = "utf-8", -- the encoding written to a file
   smartindent = true,     -- smart autoindenting when starting a new line.
@@ -44,7 +44,6 @@ local options = {
   wrap = false,
   linebreak = true, -- line break after an entire word
 
-  mousemoveevent = true, -- for bufferline hover events
 
   laststatus = 0,  -- disable statusline (for alpha no blink)
 

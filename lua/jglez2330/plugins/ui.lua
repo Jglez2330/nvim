@@ -10,6 +10,7 @@ return {
         config = function()
             require("jglez2330.core.ui.dressing")
         end,
+        enabled = true,
     },
     {
         "rcarriga/nvim-notify",
@@ -49,7 +50,8 @@ return {
         opts = { use_diagnostic_signs = true },
         keys = function()
             require("jglez2330.core.ui.trouble_keys")
-        end
+        end,
+        enabled = true,
     },
     { "nvim-tree/nvim-web-devicons" },
     { "folke/lsp-colors.nvim" },
