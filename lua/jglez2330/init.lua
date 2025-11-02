@@ -1,2 +1,1 @@
-require("jglez2330.config.utils")
-
+require "jglez2330.config.lazy"
