@@ -1,1 +1,1 @@
-require "jglez2330"
+require("jglez2330")
