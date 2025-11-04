@@ -15,8 +15,8 @@ return {
 		"Theprimeagen/harpoon",
 		branch = "harpoon2",
 		config = function()
-			require("jglez2330.config.harpoon")
+			require("jglez2330.config.dev.harpoon")
 		end,
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
 	},
 }
