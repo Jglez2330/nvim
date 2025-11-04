@@ -19,4 +19,10 @@ return {
 		end,
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
 	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("jglez2330.config.dev.gitsigns")
+		end,
+	},
 }
