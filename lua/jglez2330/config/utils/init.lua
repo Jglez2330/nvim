@@ -17,3 +17,4 @@ vim_utils.functions = require "jglez2330.config.utils.functions"
 -- ========== Startup Neovim
 -- =============================================
 require "jglez2330.lazy"
+vim_utils.ColorMyPencils()

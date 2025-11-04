@@ -63,6 +63,7 @@ local config = {
 
 	-- playground plugin
 	playground = require("jglez2330.config.treesitter.playground"),
+    lazy = true,
 }
 
 treesitter.setup(config)
