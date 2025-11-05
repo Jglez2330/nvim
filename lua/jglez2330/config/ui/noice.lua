@@ -41,3 +41,13 @@ local config = {
 }
 
 noice.setup(config)
+-- =============================================
+-- ========== Plugin Loading
+-- =============================================
+local telescope_ok, telescope = pcall(require, "telescope")
+if not telescope_ok then
+	vim_utils.load_plugin_error("telescope")
+	return
+end
+
+telescope.load_extension('noice')

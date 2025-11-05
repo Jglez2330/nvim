@@ -14,7 +14,6 @@ local config = {
         use_delta = true,
         use_custom_command = nil,
         side_by_side = false,
-        diff_context_lines = vim.o.scrolloff,
         entry_format = "state #$ID, $STAT, $TIME",
         time_format = "",
         },
