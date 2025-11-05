@@ -3,8 +3,8 @@
 -- -- =============================================
 require "jglez2330.config.utils.options"
 require "jglez2330.config.utils.keymaps"
-require "jglez2330.config.utils.config"
 require "jglez2330.config.utils.autocommand"
+require "jglez2330.config.utils.config"
 --
 
 -- =============================================
@@ -18,3 +18,4 @@ vim_utils.functions = require "jglez2330.config.utils.functions"
 -- =============================================
 require "jglez2330.lazy"
 vim_utils.ColorMyPencils()
+

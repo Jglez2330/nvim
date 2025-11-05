@@ -48,6 +48,7 @@ local options = {
 	ruler = false, -- no position information in bottom-right
 
 	colorcolumn = "150",
+    mouse="",
 }
 
 for k, v in pairs(options) do

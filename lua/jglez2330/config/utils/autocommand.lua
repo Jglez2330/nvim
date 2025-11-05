@@ -1,10 +1,12 @@
-vim.api.nvim_create_autocmd("FileType", {
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("FileType", {
 	command = "set formatoptions-=cro",
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
+autocmd("LspAttach", {
 	callback = function(args)
-        local opts = { buffer = args.buf, remap = false }
+		local opts = { buffer = args.buf, remap = false }
 
 		vim.keymap.set("n", "gd", function()
 			vim.lsp.buf.definition()
@@ -36,5 +38,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("i", "<C-h>", function()
 			vim.lsp.buf.signature_help()
 		end, vim.tbl_extend("force", opts, { desc = "Signature Help" }))
+	end,
+})
+
+autocmd("TextYankPost", {
+	desc = "Highlight yanked text",
+	group = augroup("highlightyank", { clear = true }),
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
 	end,
 })
