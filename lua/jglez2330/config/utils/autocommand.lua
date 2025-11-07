@@ -18,7 +18,7 @@ autocmd("LspAttach", {
 			vim.lsp.buf.workspace_symbol()
 		end, vim.tbl_extend("force", opts, { desc = "Workspace Symbol" }))
 		vim.keymap.set("n", "<leader>ld", function()
-			vim.diagnostic.open_float()
+			vim.diagnostic.open_float({border = 'rounded',})
 		end, vim.tbl_extend("force", opts, { desc = "Float diagnostic" }))
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.goto_next()
