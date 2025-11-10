@@ -33,7 +33,7 @@ return {
 			bigfile = { enabled = true },
 			dashboard = { enabled = true },
 			explorer = { enabled = false },
-			indent = { enabled = true },
+			indent = { enabled = false },
 			input = {
 				enabled = true,
 				icon = " ",
@@ -46,10 +46,10 @@ return {
 			picker = { enabled = true },
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
-			scope = { enabled = true },
-			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
-			words = { enabled = true },
+			scope = { enabled = false },
+			scroll = { enabled = false },
+			statuscolumn = { enabled = false },
+			words = { enabled = false },
 			win = {
 				enabled = true,
 				show = true,
