@@ -22,6 +22,18 @@ return {
         lazy = true,
         name = "catppuccin",
         opts = {
+            -- Flavour follows the desktop theme switcher (~/.config/theme/current).
+            flavour = (function()
+                local f = io.open(vim.fn.expand("~/.config/theme/current"))
+                if f then
+                    local fl = (f:read("l") or ""):match("^(%S+)")
+                    f:close()
+                    if fl == "latte" or fl == "frappe" or fl == "macchiato" or fl == "mocha" then
+                        return fl
+                    end
+                end
+                return "macchiato"
+            end)(),
             integrations = {
                 alpha = true,
                 cmp = true,
@@ -52,6 +64,38 @@ return {
                 which_key = true,
             },
         },
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+            -- Live-follow the desktop theme: when ~/.config/theme/current changes,
+            -- re-apply the flavour, but only if catppuccin is the active scheme.
+            local path = vim.fn.expand("~/.config/theme/current")
+            local uv = vim.uv or vim.loop
+            local function reapply()
+                local f = io.open(path)
+                if not f then return end
+                local fl = (f:read("l") or ""):match("^(%S+)")
+                f:close()
+                local valid = { latte = true, frappe = true, macchiato = true, mocha = true }
+                if valid[fl] and (vim.g.colors_name or ""):match("^catppuccin") then
+                    vim.g.catppuccin_flavour = fl
+                    pcall(function()
+                        require("catppuccin").compile()
+                        vim.cmd.colorscheme("catppuccin-" .. fl)
+                    end)
+                end
+            end
+            local w = uv.new_fs_event()
+            if w then
+                local function arm()
+                    w:start(path, {}, vim.schedule_wrap(function()
+                        reapply()
+                        pcall(function() w:stop() end)
+                        arm() -- re-arm: editors replace the file, invalidating the watch
+                    end))
+                end
+                arm()
+            end
+        end,
     },
     {
         "AstroNvim/astrotheme",
